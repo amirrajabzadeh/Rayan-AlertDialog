@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.LayoutDirection;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,6 +25,7 @@ public class RayanAlert {
     private static FancyButton btnYes, btnNo;
     private static ConstraintLayout cl;
     private static ConstraintLayout clLoading;
+    private static ConstraintLayout clParent;
     private final AutofitTextView tvYesButton;
     private final AutofitTextView tvNoButton;
     private final AutofitTextView tvTitle;
@@ -42,6 +44,7 @@ public class RayanAlert {
         alertDialog.setCancelable(false);
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+        clParent = view.findViewById(R.id.clParent);
         cl = view.findViewById(R.id.clContent);
         clLoading = view.findViewById(R.id.clLoading);
         LottieAnimationView animationView = view.findViewById(R.id.Loading);
@@ -70,7 +73,7 @@ public class RayanAlert {
     public void show(final OnClickListener clickListener) {
         if (!tvTitle.getText().toString().equals(""))
             header.setVisibility(View.GONE);
-        
+
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,19 +122,39 @@ public class RayanAlert {
         tvNoButton.setText(s);
         return this;
     }
-    
-    public RayanAlert setTitle(String title){
+
+    public RayanAlert setTitle(String title) {
         tvTitle.setText(title);
         return this;
     }
-    
-    public RayanAlert setMessage(String message){
+
+    public RayanAlert setMessage(String message) {
         tvMessage.setText(message);
         return this;
     }
 
-    public RayanAlert setImageLoading(Drawable image){
+    public RayanAlert setImageLoading(Drawable image) {
         imgLoading.setImageDrawable(image);
         return this;
     }
+
+    public RayanAlert setLayoutDirection(int layoutDirection) {
+        switch (layoutDirection) {
+            case LayoutDirection.LTR:
+                clParent.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+                break;
+            case LayoutDirection.RTL:
+                clParent.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+                break;
+            case LayoutDirection.INHERIT:
+                clParent.setLayoutDirection(View.LAYOUT_DIRECTION_INHERIT);
+                break;
+            case LayoutDirection.LOCALE:
+                clParent.setLayoutDirection(View.LAYOUT_DIRECTION_LOCALE);
+                break;
+
+        }
+        return this;
+    }
+
 }
