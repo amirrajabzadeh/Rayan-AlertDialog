@@ -71,7 +71,7 @@ public class RayanAlert {
     }
 
     public void show(final OnClickListener clickListener) {
-        if (!tvTitle.getText().toString().equals(""))
+        if (tvTitle.getText().toString().equals(""))
             header.setVisibility(View.GONE);
 
         btnYes.setOnClickListener(new View.OnClickListener() {
