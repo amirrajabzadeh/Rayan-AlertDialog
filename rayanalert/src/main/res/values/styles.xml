@@ -1,0 +1,22 @@
+<resources>
+
+    <style name="btnAccept">
+        <item name="fb_defaultColor">@color/colorPrimary</item>
+        <item name="fb_focusColor">@color/colorAccent</item>
+        <item name="fb_radius">50dp</item>
+        <item name="fb_borderColor">@color/colorPrimaryDark</item>
+        <!--        <item name="fb_borderWidth">1dp</item>-->
+        <item name="fb_textColor">@color/colorWhite</item>
+        <item name="fb_textFontRes">@font/iransans_bold</item>
+    </style>
+
+    <style name="btnCancel">
+        <item name="fb_defaultColor">@color/colorWhite</item>
+        <item name="fb_focusColor">@color/colorAccent</item>
+        <item name="fb_radius">50dp</item>
+        <item name="fb_borderColor">@color/colorPrimaryDark</item>
+        <item name="fb_borderWidth">1dp</item>
+        <item name="fb_textColor">@color/colorPrimary</item>
+        <item name="fb_textFontRes">@font/iransans_bold</item>
+    </style>
+</resources>
