@@ -77,9 +77,14 @@ public class RayanAlert {
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkShowLoading)
-                    showLoading();
                 clickListener.onPositiveButtonClicked();
+
+                if (checkShowLoading) {
+                    showLoading();
+                }
+                else {
+                    alertDialog.dismiss();
+                }
             }
         });
 
