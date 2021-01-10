@@ -64,9 +64,9 @@ public class RayanAlert {
 
     }
 
-    
+
     public interface OnClickListener {
-        void onPositiveButtonClicked();
+        void onPositiveButtonClick();
 
 //            void onNegativeButtonClicked();
     }
@@ -78,12 +78,11 @@ public class RayanAlert {
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickListener.onPositiveButtonClicked();
+                clickListener.onPositiveButtonClick();
 
                 if (checkShowLoading) {
                     showLoading();
-                }
-                else {
+                } else {
                     alertDialog.dismiss();
                 }
             }
@@ -93,7 +92,6 @@ public class RayanAlert {
             @Override
             public void onClick(View v) {
                 alertDialog.dismiss();
-//                    clickListener.onNegativeButtonClicked();
             }
         });
 
@@ -105,8 +103,9 @@ public class RayanAlert {
         return this;
     }
 
-    public void dismissAlertDialog() {
+    public void dismiss() {
         alertDialog.dismiss();
+        dismissLoading();
     }
 
     public void showLoading() {
@@ -114,7 +113,7 @@ public class RayanAlert {
         clLoading.setVisibility(View.VISIBLE);
     }
 
-    public void hideLoading() {
+    public void dismissLoading() {
         cl.setVisibility(View.VISIBLE);
         clLoading.setVisibility(View.GONE);
     }
@@ -129,13 +128,75 @@ public class RayanAlert {
         return this;
     }
 
+    public RayanAlert setBackgroundPositiveButton(int color) {
+        btnYes.setBackgroundColor(color);
+        return this;
+    }
+
+    public RayanAlert setFocusBackgroundColorPositiveButton(int color) {
+        btnYes.setFocusBackgroundColor(color);
+        return this;
+    }
+
+    public RayanAlert setBorderColorPositiveButton(int color) {
+        btnYes.setBorderColor(color);
+        return this;
+    }
+
+    public RayanAlert setBorderWidthPositiveButton(int width) {
+        btnYes.setBorderWidth(width);
+        return this;
+    }
+
+    public RayanAlert setTextColorPositiveButton(int color) {
+        tvYesButton.setTextColor(color);
+        return this;
+    }
+
+
+    public RayanAlert setBackgroundNegativeButton(int color) {
+        btnNo.setBackgroundColor(color);
+        return this;
+    }
+
+    public RayanAlert setFocusBackgroundColorNegativeButton(int color) {
+        btnNo.setFocusBackgroundColor(color);
+        return this;
+    }
+
+    public RayanAlert setBorderColorNegativeButton(int color) {
+        btnNo.setBorderColor(color);
+        return this;
+    }
+
+    public RayanAlert setBorderWidthNegativeButton(int width) {
+        btnNo.setBorderWidth(width);
+        return this;
+    }
+
+    public RayanAlert setTextColorNegativeButton(int color) {
+        tvNoButton.setTextColor(color);
+        return this;
+    }
+
+
     public RayanAlert setTitle(String title) {
         tvTitle.setText(title);
         return this;
     }
 
+    public RayanAlert setColorTitle(int color) {
+        tvTitle.setTextColor(color);
+        return this;
+    }
+
     public RayanAlert setMessage(String message) {
         tvMessage.setText(message);
+        return this;
+    }
+
+    public RayanAlert setColorMessage(int color) {
+        tvMessage.setTextColor(color);
         return this;
     }
 
@@ -162,5 +223,11 @@ public class RayanAlert {
         }
         return this;
     }
+
+    public RayanAlert setTitleBackground(int color) {
+        header.setBackgroundColor(color);
+        return this;
+    }
+
 
 }
