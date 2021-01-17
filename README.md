@@ -140,3 +140,127 @@ alert
 	     }
 	});
 ```
+
+- Show Loading 
+  > `.showLoading(boolean isShow)`
+
+```java
+RayanAlert alert = new RayanAlert(this);
+
+alert
+	.setTitle("Title")
+	.setMessage("Message")
+	.showLoading(true)
+	.show(new RayanAlert.OnClickListener() {
+	     @Override
+	     public void onPositiveButtonClick() {
+         
+	     }
+	});
+```
+
+
+- Set Image Loading
+  > `.setImageLoading(Drawable image)`
+
+```java
+RayanAlert alert = new RayanAlert(this);
+
+alert
+	.setTitle("Title")
+	.setMessage("Message")
+	.showLoading(true)
+	.setImageLoading(getResources().getDrawable(R.drawable.ic_github))
+	.show(new RayanAlert.OnClickListener() {
+	     @Override
+	     public void onPositiveButtonClick() {
+         
+	     }
+	});
+```
+
+- Set Layout Direction
+  > `.setLayoutDirection(int layoutDirection)`
+
+```java
+RayanAlert alert = new RayanAlert(this);
+
+alert
+	.setTitle("Title")
+	.setColorTitle(Color.WHITE)
+	.setTitleBackground(Color.GREEN)
+	.setMessage("Message")
+	.setColorMessage(Color.BLUE)
+	.setImageLoading(getResources().getDrawable(R.drawable.ic_github))
+	.setLayoutDirection(LayoutDirection.LTR)
+	.show(new RayanAlert.OnClickListener() {
+	     @Override
+	     public void onPositiveButtonClick() {
+         
+	     }
+	});
+```
+- Positive Button
+  > `.setTextPositiveButton(String s)`
+  > `.setBackgroundPositiveButton(int color)`
+  > `.setFocusBackgroundColorPositiveButton(int color)`
+  > `.setBorderColorPositiveButton(int color)`
+  > `.setBorderWidthPositiveButton(int width)`
+  > `.setTextColorPositiveButton(int color)`
+
+```java
+RayanAlert alert = new RayanAlert(this);
+
+alert
+	.setTitle("Title")
+	.setMessage("Message")
+	.setTextPositiveButton("Yes")  
+	.setBackgroundPositiveButton(Color.BLUE)  
+	.setFocusBackgroundColorPositiveButton(Color.GREEN)  
+	.setBorderColorPositiveButton(Color.YELLOW)  
+	.setBorderWidthPositiveButton(10)  
+	.setTextColorPositiveButton(Color.WHITE)
+	.show(new RayanAlert.OnClickListener() {
+	     @Override
+	     public void onPositiveButtonClick() {
+         
+	     }
+	});
+```
+
+- Negative Button
+  > `.setTextNegativeButton(String s)`
+  > `.setBackgroundNegativeButton(int color)`
+  > `.setFocusBackgroundColorNegativeButton(int color)`
+  > `.setBorderColorNegativeButton(int color)`
+  > `.setBorderWidthNegativeButton(int width)`
+  > `.setTextColorNegativeButton(int color)`
+
+```java
+RayanAlert alert = new RayanAlert(this);
+
+alert
+	.setTitle("Title")
+	.setMessage("Message")
+	.setTextNegativeButton("Yes")  
+	.setBackgroundNegativeButton(Color.BLUE)  
+	.setFocusBackgroundColorNegativeButton(Color.GREEN)  
+	.setBorderColorNegativeButton(Color.YELLOW)  
+	.setBorderWidthNegativeButton(10)  
+	.setTextColorNegativeButton(Color.WHITE)
+	.show(new RayanAlert.OnClickListener() {
+	     @Override
+	     public void onPositiveButtonClick() {
+         
+	     }
+	});
+```
+
+
+- Dialog Dismiss
+
+```java
+RayanAlert alert = new RayanAlert(this);
+
+alert.dismiss();
+```
